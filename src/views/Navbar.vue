@@ -4,7 +4,7 @@
     <v-toolbar-title>Title</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat v-for="item in items" :key="item.title" to="item.link">
+      <v-btn flat v-for="item in items" :key="item.title" :to="item.link">
           <v-icon right>{{item.icon}}</v-icon>{{item.title}}
       </v-btn>
     </v-toolbar-items>

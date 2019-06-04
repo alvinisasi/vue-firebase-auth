@@ -28,7 +28,6 @@
 
 <script>
 /* eslint-disable */
-import * as firebase from 'firebase'
 export default {
     data: () => ({
         valid: true,
@@ -51,15 +50,11 @@ export default {
             this.loginWithFirebase()
         },
         loginWithFirebase() {
-        firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-            .then((response) => {
-            alert('success')
-            console.log(response)
-            })
-            .catch((error) => {
-            alert('failure')
-            console.log(error)
-            })
+            const user = {
+                email : this.email,
+                password : this.password
+            }
+            this.$store.dispatch('loginAction', user)
         }
     },
 }
